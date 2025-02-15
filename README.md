@@ -1,2 +1,2 @@
 # NNSTM
-Statistical Mechanics of Neural Networks
+This is the repository for the code of my MSc Thesis "Statistical Mechanics of Neural Networks"
