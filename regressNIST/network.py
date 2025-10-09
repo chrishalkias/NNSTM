@@ -41,7 +41,7 @@ def untrained_net(X, ensemble_size=100, temperature=0.1, neuron = 0, mu=0, linea
   plt.title(f'Outputs of {ensemble_size} untrained NNs for T={temperature}')
   plt.xlabel('Network Index')
   plt.ylabel(f'Output')
-  plt.ylim(-10, 10)
+  # plt.ylim(0, 1)
   plt.savefig(f'figures/avg_output_for_T={temperature}.png')
   plt.show()
   print()

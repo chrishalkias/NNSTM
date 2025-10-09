@@ -1,5 +1,5 @@
 from dataset import fetch_mnist, transform_label_to_gaussian, g_tester
-from network import SimpleFullyConnectedNetwork, untrained_net
+from network import untrained_net
 import numpy as np
 import matplotlib.pyplot as plt
 from trainer import regress, plot_training, plot_prediction
@@ -20,15 +20,15 @@ high_temp = untrained_net(X=X,
 
 low_temp = untrained_net(X=X, 
                          ensemble_size=100, 
-                         temperature = 1)
+                         temperature = 3)
 
 # Now train the model
 model, history = regress(X=X, 
                         X_test=X_test, 
                         y_transformed=y_transformed, 
                         y_test_transformed = y_test_transformed, 
-                        epochs = 50, 
-                        g=0.7)
+                        epochs = 60, 
+                        g=0.2)
 
 # If you want to save the model replace the above with
 # ```
