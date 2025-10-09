@@ -1,0 +1,5 @@
+# Omit logs
+/my_logs
+
+# Omit model files
+/model_checkpoints
