@@ -27,8 +27,19 @@ model, history = regress(X=X,
                         X_test=X_test, 
                         y_transformed=y_transformed, 
                         y_test_transformed = y_test_transformed, 
-                        epochs = 5, 
+                        epochs = 50, 
                         g=0.7)
+
+# If you want to save the model replace the above with
+# ```
+# try:
+#   model, history = ...
+#
+# except:
+#   model = keras.models.load_model("100_epochs_lin.keras") #load the model if saved
+#   prediction = np.array(model.predict(X))
+# ```
+# and uncomment line 25 in the regressNIST/trainer.py file
 
 # Store the relevant quantitites
 prediction = np.array(model.predict(X))
@@ -48,8 +59,6 @@ plot_prediction(X_test=X_test,
                 y_test=y_test, 
                 y_test_transformed=y_test_transformed, 
                 prediction=prediction, 
-                tests = 1)
+                tests = 3)
 
-# except:
-#   model = keras.models.load_model("100_epochs_lin.keras") #load the model if saved
-#   prediction = np.array(model.predict(X))
+

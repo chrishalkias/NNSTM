@@ -49,6 +49,7 @@ def plot_prediction(X_test, y_test, y_test_transformed, prediction, tests = 1):
   for mu in [random.randint(0,len(X_test)) for _ in range(tests)]:
     plt.imshow(X_test[mu])
     plt.title(f'Image of digit {y_test[mu]}')
+    plt.savefig('figures/digit_mu.png')
     plt.show()
     error_squared = round(0.5 * np.power((prediction[mu]-y_test_transformed[mu]).sum(), 2), 3)
     print(f'Prediction Error: {error_squared}')

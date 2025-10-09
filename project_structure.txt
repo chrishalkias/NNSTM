@@ -1,0 +1,57 @@
+.
+├── exact_vs_anneal
+│   ├── __init__.py
+│   ├── compare.py
+│   ├── main.py
+│   ├── network.py
+│   └── prior.py
+├── figures
+│   ├── annealed_prior.png
+│   ├── avg_output_for_T=1.png
+│   ├── avg_output_for_T=10.png
+│   ├── gaussian_kde_T=1.png
+│   ├── gaussian_kde_T=10.png
+│   ├── gaussian.png
+│   ├── lin.png
+│   ├── pred_3099[1].png
+│   ├── pred_583[2].png
+│   ├── prior.png
+│   └── training.png
+├── model_checkpoints
+├── my_logs
+│   ├── run_2025_10_08-23_50_30
+│   │   ├── train
+│   │   └── validation
+│   ├── run_2025_10_09-01_07_25
+│   │   ├── train
+│   │   └── validation
+│   ├── run_2025_10_09-01_15_50
+│   │   ├── train
+│   │   └── validation
+│   ├── run_2025_10_09-01_18_30
+│   │   ├── train
+│   │   └── validation
+│   ├── run_2025_10_09-01_21_06
+│   │   ├── train
+│   │   └── validation
+│   ├── run_2025_10_09-01_21_50
+│   │   ├── train
+│   │   └── validation
+│   ├── run_2025_10_09-01_29_46
+│   │   ├── train
+│   │   └── validation
+│   ├── run_2025_10_09-01_33_27
+│   │   ├── train
+│   │   └── validation
+│   └── run_2025_10_09-01_35_33
+│       ├── train
+│       └── validation
+├── project_structure.txt
+├── README.md
+└── regressNIST
+    ├── dataset.py
+    ├── main.py
+    ├── network.py
+    └── trainer.py
+
+34 directories, 21 files
