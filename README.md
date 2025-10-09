@@ -7,7 +7,7 @@ This is a repository containing python files used to compare exact analytical so
 The aim of the project is to establish connections and differences between analytical calculations of the partition function of neural networks and ones computed through backpropagation. The general idea is that the partition function encodes all the statistical information of the system via:
 
 $$
-Z(\beta) = \int \mathcal{DW} \;e^{-\beta \mathcal{L}}
+Z(\beta) = \int \mathcal{DW}  e^{-\beta \mathcal{L}}
 $$
 
 where, $\mathcal{W}$ are the internal weights of the system, $\mathcal{L}$ is the loss function. A **learning algorithm** (LA) can be thought in physics terms as cooling the system down, this leads to the _annealed_ partition function:
@@ -47,17 +47,62 @@ Relating to the contents of the `/exact_vs_anneal` folder. Many of the methods u
 
 ![Alt text](figures/gaussian.png)
 
+Before moving on to training, the initialization statistics of the model are examined. Specifically the average magnitude of the output layer of the network and its Gaussian KDE are examined for low and high **intialization temperatures**.
+
+>[!NOTE]
+>Initialization temperatures differ from the temperature defined in the previous subsection. The former are directly liked to the variance of the Gaussian intialization of the weights while the latter are a property of the output layer only.
+
+The expected behaviour for the average value $\mu$ and the Gaussian KDE are recovered in that
+
+$$
+\lim_{T\rightarrow 0} \mu = 0
+$$
+$$
+\lim_{T_\rightarrow 0} \text{KDE}(|h_d|) = \delta(|h_d|)
+$$
+
+where $\delta(|h_d|)$ is the [Dirac delta](https://en.wikipedia.org/wiki/Dirac_delta_function) function.
+<table>
+  <tr>
+    <td align="center">
+      <img src="figures/avg_output_for_T=1.png" width="400"/>
+      <br>
+      <em>Ensemble output for T=1</em>
+    </td>
+    <td align="center">
+      <img src="figures/gaussian_kde_T=1.png" width="400"/>
+      <br>
+      <em>Ensemble output for T=1</em>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="figures/avg_output_for_T=10.png" width="400"/>
+      <br>
+      <em>Ensemble output for T=10</em>
+    </td>
+    <td align="center">
+      <img src="figures/gaussian_kde_T=10.png" width="400"/>
+      <br>
+      <em>Ensemble output for T=10</em>
+    </td>
+  </tr>
+</table>
+
 After training the model is evaluated on classifications of `MNIST` examples through the output distribution:
 
 <table>
   <tr>
     <td align="center">
-      <img src="figures/pred_3099[1].png" width="400"/>
+      <img src="figures/digit_mu.png" width="400"/>
       <br>
       <em>Training Performance</em>
     </td>
     <td align="center">
-      <img src="assets/display/test_stats_disp.png" width="400"/>
+      <img src="figures/pred_2824[0].png" width="400"/>
       <br>
       <em>Validation Performance</em>
     </td>
@@ -96,4 +141,4 @@ git clone https://github.com/chrishalkias/NNSTM
 
 ## Additional information
 
-This project was done as part of my MSc degree in Leiden Univrsity under the supervision of prof. Koenraad Schalm. An online version of the thesis draft can be found in the [student thesis repository](https://studenttheses.universiteitleiden.nl/handle/1887/4255089)
+This project was done as part of my MSc degree in Leiden Univrsity under the supervision of prof. Koenraad Schalm. An online version of the thesis draft can be found on the [student thesis repository](https://studenttheses.universiteitleiden.nl/handle/1887/4255089).
