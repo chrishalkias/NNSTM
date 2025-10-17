@@ -1,9 +1,18 @@
-# Statistical mechanics of Neural networks (NN-STM)
+# Statistical mechanics of Neural networks (NNSTM)
+<div align='center'>
+
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![LaTeX](https://img.shields.io/badge/LaTeX-008080?logo=latex&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white)
+![Keras](https://img.shields.io/badge/Keras-D00000?logo=keras&logoColor=white)
+</div>
 
 This is a repository containing python files used to compare exact analytical solutions for the partition function of _Linear_ neural networks with the ones computed through ordinary backpropagation.
 
 ## About the project
 
+<div style="border:2px solid blue; padding:10px">
 The aim of the project is to establish connections and differences between analytical calculations of the partition function of neural networks and ones computed through backpropagation. The general idea is that the partition function encodes all the statistical information of the system via:
 
 $$
@@ -15,7 +24,7 @@ where, $\mathcal{W}$ are the internal weights of the system, $\mathcal{L}$ is th
 $$
 Z_{LA} = \lim_{\beta\rightarrow\infty}Z(\beta)
 $$
-
+</div>
 
 ### Comparison between annealed and exact partition functions
 
@@ -62,17 +71,19 @@ $$
 $$
 
 where $\delta(|h_d|)$ is the [Dirac delta](https://en.wikipedia.org/wiki/Dirac_delta_function) function.
+
+<div style="border:2px solid green; padding:10px">
 <table>
   <tr>
     <td align="center">
-      <img src="figures/avg_output_for_T=1.png" width="400"/>
+      <img src="figures/avg_output_for_T=3.png" width="400"/>
       <br>
-      <em>Ensemble output for T=1</em>
+      <em>Ensemble output for T=1, notice the mangitude of the output layer fluctuate to values < 0.1.</em>
     </td>
     <td align="center">
-      <img src="figures/gaussian_kde_T=1.png" width="400"/>
+      <img src="figures/gaussian_kde_T=3.png" width="400"/>
       <br>
-      <em>Ensemble output for T=1</em>
+      <em>Ensemble output for T=1. The KDE of the ensemble output is close to a dirac delta function.</em>
     </td>
   </tr>
 </table>
@@ -82,29 +93,31 @@ where $\delta(|h_d|)$ is the [Dirac delta](https://en.wikipedia.org/wiki/Dirac_d
     <td align="center">
       <img src="figures/avg_output_for_T=10.png" width="400"/>
       <br>
-      <em>Ensemble output for T=10</em>
+      <em>Ensemble output for T=10. Notice the larger fluctuations (>1) in the output layer.</em>
     </td>
     <td align="center">
       <img src="figures/gaussian_kde_T=10.png" width="400"/>
       <br>
-      <em>Ensemble output for T=10</em>
+      <em>Ensemble output for T=10. Notice the smoothened character of the Gaussian KDE.</em>
     </td>
   </tr>
 </table>
+</div>
 
-After training the model is evaluated on classifications of `MNIST` examples through the output distribution:
+After training the model is evaluated on classifications of `MNIST` examples through the output distribution. It is especially hard to find good minima of the loss landscape on this task since the mean square error loss function is not suitted for -what is fundamentally- a classification task. However, in the context of preactivation _fields_ this is how a classification task would look like:
+
 
 <table>
   <tr>
     <td align="center">
       <img src="figures/digit_mu.png" width="400"/>
       <br>
-      <em>Training Performance</em>
+      <em>Pixel heatmap of the example</em>
     </td>
     <td align="center">
       <img src="figures/pred_2824[0].png" width="400"/>
       <br>
-      <em>Validation Performance</em>
+      <em>The predicted label distribution vs the target label of the example</em>
     </td>
   </tr>
 </table>
