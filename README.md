@@ -136,6 +136,8 @@ The code is structured in two directories, one containing the exact solution/ann
 │   ├── network.py
 │   └── prior.py
 ├── figures
+├── norm_learning
+│   └── plots.ipynb
 ├── README.md
 └── regressNIST
     ├── dataset.py
@@ -154,4 +156,4 @@ git clone https://github.com/chrishalkias/NNSTM
 
 ## Additional information
 
-This project was done as part of my MSc degree in Leiden Univrsity under the supervision of prof. Koenraad Schalm. An online version of the thesis draft can be found on the [student thesis repository](https://studenttheses.universiteitleiden.nl/handle/1887/4255089).
+This project was done as part of my MSc degree in Leiden Univrsity under the supervision of prof. Koenraad Schalm. An online version of the thesis draft can be found on the [student thesis repository](https://studenttheses.universiteitleiden.nl/handle/1887/4255089). In the draft, _norm learning_ is also discussed pertraining to the contents of the synonymous directory of this repository.
